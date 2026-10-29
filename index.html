@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Stride - Premium Footwear & Sneakers</title>
+</head>
+
+<body class="font-['Poppins',sans-serif] bg-white text-gray-800">
+  <!-- Header / Navigation Bar -->
+  <header class="header bg-gray-100 py-3 top-0 left-0 sticky z-50 w-full shadow-md">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <a href="#" class="text-2xl font-black tracking-tight text-gray-900">Stride<span class="text-red-800">.</span></a>
+      
+      <!-- Desktop Navigation Links -->
+      <ul class="hidden md:flex space-x-6 text-sm font-semibold text-gray-700">
+        <li><a href="#" class="hover:text-red-800 transition-colors">Home</a></li>
+        <li><a href="#features" class="hover:text-red-800 transition-colors">Features</a></li>
+        <li><a href="#shop" class="hover:text-red-800 transition-colors">Shop</a></li>
+        <li><a href="#newsletter" class="hover:text-red-800 transition-colors">Deals</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <!-- Contact button (Desktop) -->
+        <a href="#footer"
+          class="hidden md:block border border-black/10 rounded-full px-4 py-2 uppercase text-xs font-bold hover:bg-red-800 hover:text-white duration-300">Contact
+          Us</a>
+
+        <!-- Cart Icon with Counter Badge -->
+        <div
+          class="relative w-10 h-10 rounded-full border border-black/10 flex items-center justify-center hover:bg-red-800 hover:text-white duration-300 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+            <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+            <path d="M17 17h-11v-14h-2" />
+            <path d="M6 5l14 1l-1 7h-13" />
+          </svg>
+          <span id="cartCount"
+            class="absolute -top-1 -right-1 bg-red-800 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+        </div>
+
+        <!-- User Icon -->
+        <div
+          class="icon-item w-10 h-10 rounded-full border border-black/10 hidden md:flex items-center justify-center hover:bg-red-800 hover:text-white duration-300 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-user">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+          </svg>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menuBtn"
+          class="w-10 h-10 rounded-full border border-black/10 flex md:hidden items-center justify-center hover:bg-red-800 hover:text-white duration-300 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M4 6l16 0" />
+            <path d="M4 12l16 0" />
+            <path d="M4 18l16 0" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <nav id="mobileMenu" class="hidden md:hidden border-t border-black/10 mt-3 pt-3 pb-3 px-4 bg-gray-100">
+      <ul class="flex flex-col space-y-3 text-sm font-semibold text-gray-700">
+        <li><a href="#" class="block hover:text-red-800 transition-colors">Home</a></li>
+        <li><a href="#features" class="block hover:text-red-800 transition-colors">Features</a></li>
+        <li><a href="#shop" class="block hover:text-red-800 transition-colors">Shop</a></li>
+        <li><a href="#newsletter" class="block hover:text-red-800 transition-colors">Deals</a></li>
+        <li><a href="#footer" class="block hover:text-red-800 transition-colors">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Banner Section -->
+  <section class="hero-banner h-screen relative">
+    <img src="./images/httpsbanner.avif" alt="Hero Banner" class="h-full w-full object-cover">
+    <div class="hero-banner-overlay bg-linear-to-b to-black to-150% from-transparent w-full h-full absolute top-0 left-0">
+      <div class="container mx-auto p-8 flex justify-center h-full flex-col">
+        <h2 class="text-white text-3xl md:text-5xl font-bold tracking-tight">Step Into Comfort &amp; Elevated Style</h2>
+        <p class="text-white/80 mt-4 w-full md:w-1/2 text-base leading-relaxed">Discover our new season collection of lightweight, high-performance sneakers built for all-day comfort and modern street looks.</p>
+        <a href="#shop"
+          class="inline-block border border-white/45 w-fit mt-6 px-6 py-2.5 text-white rounded-full cursor-pointer text-xs uppercase tracking-wider font-semibold hover:bg-red-800 hover:border-red-800 duration-300">Quick
+          Shop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section (Why Choose Us) -->
+  <section id="features" class="py-12 bg-gray-50 border-b border-black/5">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Feature 1: Free Shipping -->
+        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white border border-black/5 shadow-xs">
+          <div class="w-12 h-12 rounded-full bg-red-100 text-red-800 flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-sm">Free Shipping</h4>
+            <p class="text-xs text-gray-500 mt-0.5">On all orders over $75</p>
+          </div>
+        </div>
+
+        <!-- Feature 2: 30-Day Return -->
+        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white border border-black/5 shadow-xs">
+          <div class="w-12 h-12 rounded-full bg-red-100 text-red-800 flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M9 11l-4 4l4 4m-4 -4h11a4 4 0 0 0 0 -8h-1" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-sm">30-Day Returns</h4>
+            <p class="text-xs text-gray-500 mt-0.5">Easy hassle-free exchange</p>
+          </div>
+        </div>
+
+        <!-- Feature 3: Secure Payment -->
+        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white border border-black/5 shadow-xs">
+          <div class="w-12 h-12 rounded-full bg-red-100 text-red-800 flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z" />
+              <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+              <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-sm">Secure Payment</h4>
+            <p class="text-xs text-gray-500 mt-0.5">100% protected checkout</p>
+          </div>
+        </div>
+
+        <!-- Feature 4: 24/7 Support -->
+        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white border border-black/5 shadow-xs">
+          <div class="w-12 h-12 rounded-full bg-red-100 text-red-800 flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 14v-3a8 8 0 1 1 16 0v3" />
+              <path d="M18 19c0 1.657 -2.686 3 -6 3" />
+              <path d="M4 14a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2v-3z" />
+              <path d="M15 14a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2v-3z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-sm">24/7 Support</h4>
+            <p class="text-xs text-gray-500 mt-0.5">Dedicated customer care</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Shop Section -->
+  <section id="shop" class="product-shop p-8 md:p-16 xl:p-20">
+    <div class="container mx-auto">
+      <div class="mb-10 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Featured Sneakers</h2>
+        <p class="text-gray-500 mt-2 text-sm">Explore our best picks designed for performance, comfort, and everyday wear.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <!-- Product 1 -->
+        <div class="product-card border border-black/10 rounded-3xl p-4 group transition-all duration-300 hover:shadow-xl">
+          <div class="product-card-image h-[50vh] overflow-hidden rounded-3xl relative">
+            <div class="product-card-image-label px-4 py-1.5 bg-red-800 rounded-full w-fit text-white text-xs font-semibold absolute top-4 left-4 z-10">
+              New Arrival</div>
+            <img src="./images/images.jpeg" alt="Air Swift Runner" class="object-cover object-center w-full h-full group-hover:scale-105 duration-500">
+          </div>
+          <div class="product-card-content mt-6">
+            <h3 class="text-2xl font-bold text-gray-900 group-hover:text-red-800 duration-300">Air Swift Runner</h3>
+            <p class="text-gray-500 mt-2 line-clamp-2 text-sm">Ultralight breathable mesh with responsive foam cushioning engineered for daily runs and active workouts.</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-xl font-bold text-gray-900">$129.99</span>
+              <span class="text-xs text-green-600 font-semibold bg-green-50 px-2.5 py-1 rounded-full">In Stock</span>
+            </div>
+            <button
+              class="buy-btn w-full bg-red-800 text-white py-2 px-4 rounded-full mt-4 cursor-pointer font-medium hover:bg-red-950 duration-300">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card border border-black/10 rounded-3xl p-4 group transition-all duration-300 hover:shadow-xl">
+          <div class="product-card-image h-[50vh] overflow-hidden rounded-3xl relative">
+            <div class="product-card-image-label px-4 py-1.5 bg-red-800 rounded-full w-fit text-white text-xs font-semibold absolute top-4 left-4 z-10">
+              Best Seller</div>
+            <img src="./images/images (4).jpeg" alt="Street Glide Classic" class="object-cover object-center w-full h-full group-hover:scale-105 duration-500">
+          </div>
+          <div class="product-card-content mt-6">
+            <h3 class="text-2xl font-bold text-gray-900 group-hover:text-red-800 duration-300">Street Glide Classic</h3>
+            <p class="text-gray-500 mt-2 line-clamp-2 text-sm">Timeless low-top silhouette crafted from durable synthetic leather with reinforced grip rubber soles.</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-xl font-bold text-gray-900">$109.99</span>
+              <span class="text-xs text-green-600 font-semibold bg-green-50 px-2.5 py-1 rounded-full">In Stock</span>
+            </div>
+            <button
+              class="buy-btn w-full bg-red-800 text-white py-2 px-4 rounded-full mt-4 cursor-pointer font-medium hover:bg-red-950 duration-300">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card border border-black/10 rounded-3xl p-4 group transition-all duration-300 hover:shadow-xl">
+          <div class="product-card-image h-[50vh] overflow-hidden rounded-3xl relative">
+            <div class="product-card-image-label px-4 py-1.5 bg-red-800 rounded-full w-fit text-white text-xs font-semibold absolute top-4 left-4 z-10">
+              15% OFF</div>
+            <img src="./images/images (5).jpeg" alt="Phantom Boost Pro" class="object-cover object-center w-full h-full group-hover:scale-105 duration-500">
+          </div>
+          <div class="product-card-content mt-6">
+            <h3 class="text-2xl font-bold text-gray-900 group-hover:text-red-800 duration-300">Phantom Boost Pro</h3>
+            <p class="text-gray-500 mt-2 line-clamp-2 text-sm">Maximum energy return sole paired with a supportive heel counter for high-intensity training sessions.</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-xl font-bold text-gray-900">$144.99</span>
+              <span class="text-xs text-red-600 font-semibold bg-red-50 px-2.5 py-1 rounded-full">Save 15%</span>
+            </div>
+            <button
+              class="buy-btn w-full bg-red-800 text-white py-2 px-4 rounded-full mt-4 cursor-pointer font-medium hover:bg-red-950 duration-300">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card border border-black/10 rounded-3xl p-4 group transition-all duration-300 hover:shadow-xl">
+          <div class="product-card-image h-[50vh] overflow-hidden rounded-3xl relative">
+            <div class="product-card-image-label px-4 py-1.5 bg-red-800 rounded-full w-fit text-white text-xs font-semibold absolute top-4 left-4 z-10">
+              Trending</div>
+            <img src="./images/images (3).jpeg" alt="Retro Court 90s" class="object-cover object-center w-full h-full group-hover:scale-105 duration-500">
+          </div>
+          <div class="product-card-content mt-6">
+            <h3 class="text-2xl font-bold text-gray-900 group-hover:text-red-800 duration-300">Retro Court 90s</h3>
+            <p class="text-gray-500 mt-2 line-clamp-2 text-sm">Vintage-inspired court sneakers featuring a padded collar, retro details, and supreme everyday comfort.</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-xl font-bold text-gray-900">$94.99</span>
+              <span class="text-xs text-green-600 font-semibold bg-green-50 px-2.5 py-1 rounded-full">In Stock</span>
+            </div>
+            <button
+              class="buy-btn w-full bg-red-800 text-white py-2 px-4 rounded-full mt-4 cursor-pointer font-medium hover:bg-red-950 duration-300">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card border border-black/10 rounded-3xl p-4 group transition-all duration-300 hover:shadow-xl">
+          <div class="product-card-image h-[50vh] overflow-hidden rounded-3xl relative">
+            <div class="product-card-image-label px-4 py-1.5 bg-red-800 rounded-full w-fit text-white text-xs font-semibold absolute top-4 left-4 z-10">
+              Limited Edition</div>
+            <img src="./images/images (2).jpeg" alt="Cloudfoam Elite" class="object-cover object-center w-full h-full group-hover:scale-105 duration-500">
+          </div>
+          <div class="product-card-content mt-6">
+            <h3 class="text-2xl font-bold text-gray-900 group-hover:text-red-800 duration-300">Cloudfoam Elite</h3>
+            <p class="text-gray-500 mt-2 line-clamp-2 text-sm">Plush memory foam insole and flexible knit construction designed to keep your feet relaxed all day long.</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-xl font-bold text-gray-900">$134.99</span>
+              <span class="text-xs text-amber-600 font-semibold bg-amber-50 px-2.5 py-1 rounded-full">Few Left</span>
+            </div>
+            <button
+              class="buy-btn w-full bg-red-800 text-white py-2 px-4 rounded-full mt-4 cursor-pointer font-medium hover:bg-red-950 duration-300">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card border border-black/10 rounded-3xl p-4 group transition-all duration-300 hover:shadow-xl">
+          <div class="product-card-image h-[50vh] overflow-hidden rounded-3xl relative">
+            <div class="product-card-image-label px-4 py-1.5 bg-red-800 rounded-full w-fit text-white text-xs font-semibold absolute top-4 left-4 z-10">
+              Popular</div>
+            <img src="./images/images (1).jpeg" alt="Apex Trail Grip" class="object-cover object-center w-full h-full group-hover:scale-105 duration-500">
+          </div>
+          <div class="product-card-content mt-6">
+            <h3 class="text-2xl font-bold text-gray-900 group-hover:text-red-800 duration-300">Apex Trail Grip</h3>
+            <p class="text-gray-500 mt-2 line-clamp-2 text-sm">All-terrain traction outsole with water-repellent coating built for outdoor adventures and city streets.</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-xl font-bold text-gray-900">$149.99</span>
+              <span class="text-xs text-green-600 font-semibold bg-green-50 px-2.5 py-1 rounded-full">In Stock</span>
+            </div>
+            <button
+              class="buy-btn w-full bg-red-800 text-white py-2 px-4 rounded-full mt-4 cursor-pointer font-medium hover:bg-red-950 duration-300">Buy
+              Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter / Deals Section -->
+  <section id="newsletter" class="py-16 bg-gray-900 text-white text-center px-4">
+    <div class="container mx-auto max-w-2xl">
+      <h2 class="text-3xl font-bold tracking-tight">Get 20% Off Your First Order</h2>
+      <p class="text-gray-400 text-sm mt-3">Subscribe to our newsletter for exclusive sneaker drops, special discounts, and early access.</p>
+      
+      <!-- Newsletter Form -->
+      <form id="newsletterForm" class="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <input type="email" required placeholder="Enter your email address"
+          class="px-5 py-3 rounded-full text-sm text-gray-900 bg-white outline-none w-full sm:w-80 shadow-inner">
+        <button type="submit"
+          class="w-full sm:w-auto bg-red-800 text-white font-semibold text-sm px-7 py-3 rounded-full hover:bg-red-700 duration-300 cursor-pointer">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="footer" class="bg-gray-100 pt-12 pb-8 border-t border-black/5 text-gray-600">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        
+        <!-- Column 1: Brand Info -->
+        <div class="md:col-span-2">
+          <h3 class="text-2xl font-black text-gray-900 tracking-tight">Stride<span class="text-red-800">.</span></h3>
+          <p class="text-sm text-gray-500 mt-3 max-w-sm leading-relaxed">
+            Premium lifestyle and performance sneakers designed for everyday comfort, durable quality, and effortless modern streetwear style.
+          </p>
+          <!-- Social Links -->
+          <div class="flex items-center space-x-3 mt-4">
+            <a href="#" class="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center hover:bg-red-800 hover:text-white duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center hover:bg-red-800 hover:text-white duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"/><path d="M8 11l0 5"/><path d="M8 8l0 .01"/><path d="M12 16l0 -5"/><path d="M16 16v-3a2 2 0 0 0 -4 0"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center hover:bg-red-800 hover:text-white duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h4 class="font-bold text-gray-900 text-sm mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-red-800 transition-colors">Home</a></li>
+            <li><a href="#features" class="hover:text-red-800 transition-colors">Features</a></li>
+            <li><a href="#shop" class="hover:text-red-800 transition-colors">Featured Sneakers</a></li>
+            <li><a href="#newsletter" class="hover:text-red-800 transition-colors">Newsletter Deals</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Customer Care -->
+        <div>
+          <h4 class="font-bold text-gray-900 text-sm mb-3">Customer Support</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-red-800 transition-colors">Track Your Order</a></li>
+            <li><a href="#" class="hover:text-red-800 transition-colors">Shipping &amp; Returns</a></li>
+            <li><a href="#" class="hover:text-red-800 transition-colors">FAQs</a></li>
+            <li><a href="#" class="hover:text-red-800 transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="border-t border-black/10 pt-6 text-center text-sm">
+        <p>&copy; 2026 <span class="text-red-800 font-semibold">Ali Tobar</span>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
